@@ -31,7 +31,7 @@ int main()
 	}
 
 	for (int i = 0; i < 26; i++) {
-		fscanf_s(ifp, "%s %s %s %s %s %d %s", std1[i].company, 30, std1[i].name, 30, std1[i].gender, 30, std1[i].phone, 30, std1[i].email, 30, &std1[i].birthday, std1[i].major, 30);
+		fscanf_s(ifp, "%s %s %s %s %s %d %s", std1[i].company, sizeof(std1[i].company), std1[i].name, sizeof(std1[i].name), std1[i].gender, sizeof(std1[i].gender), std1[i].phone, sizeof(std1[i].phone), std1[i].email, sizeof(std1[i].email), &std1[i].birthday, std1[i].major, sizeof(std1[i].major));
 	}
 
 
@@ -43,35 +43,35 @@ int main()
 	case 1:
 		printf("지망기업\n");
 		printf("지망기업 검색: ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		company_search(keyword, std1);
 		
 		break;
 	case 2:
 		printf("이름\n");
 		printf("이름 검색: ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		name_search(keyword, std1);
 
 		break;
 	case 3:
 		printf("성별\n");
 		printf("성별 검색:  (M/F) ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		gender_search(keyword, std1);
 
 		break;
 	case 4:
 		printf("전화번호\n");
 		printf("전화번호 검색: ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		phone_search(keyword, std1);
 
 		break;
 	case 5:
 		printf("이메일\n");
 		printf("이메일 검색: ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		email_search(keyword, std1);
 
 		break;
@@ -99,7 +99,7 @@ int main()
 	case 7:
 		printf("전공\n");
 		printf("전공 검색: ");
-		scanf_s("%s", keyword, 50);
+		scanf_s("%s", keyword, sizeof(keyword));
 		major_search(keyword, std1);
 
 		break;
